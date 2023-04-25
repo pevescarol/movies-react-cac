@@ -1,4 +1,4 @@
-import peliculas from '../peliculas.json'
+import { get } from '../utils/httpCliente'
 import PeliculasCard from './PeliculasCard'
 import '../styles/PeliculasGrid.css'
 
