@@ -5,10 +5,11 @@ function App() {
   return (
     <div>
       <header className='title'>
-        <main>
+        Peliculas
+      </header>
+      <main>
           <PeliculasGrid />
         </main>
-      </header>
     </div>
   );
 }

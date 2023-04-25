@@ -1,3 +1,4 @@
+import '../styles/PeliculasCard.css'
 
 const PeliculasCard = ({ pelicula }) => {
 
