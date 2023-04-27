@@ -1,6 +1,7 @@
 import './App.css';
-import PeliculasGrid from './components/PeliculasGrid';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import LandingPage from './pages/LandingPage';
+import DetallePelicula from './pages/DetallePelicula';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       </header>
 
       <Routes>
-        <Route path='/' element={<PeliculasGrid />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/pelicula/:peliculaId' element={<DetallePelicula />} />
       </Routes>
     </BrowserRouter>
   );
