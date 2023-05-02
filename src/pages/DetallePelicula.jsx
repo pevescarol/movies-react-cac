@@ -21,20 +21,20 @@ const DetallePelicula = () => {
   const imgURL = `https://image.tmdb.org/t/p/w300${pelicula.poster_path}`
 
   return(
-    <div className='contenedorDetalle'>
-      <img className='col' src={imgURL} alt={pelicula.title} />
+    <div className='w-full grid md:grid-cols-2 px-20 py-8'>
+      <img className='w-[300px] m-auto' src={imgURL} alt={pelicula.title} />
 
-      <div className='peliculaDetalle col'>
-        <p className='item'>
-          <strong>Titulo:</strong>
+      <div className='pt-8'>
+        <p className='py-4'>
+          <strong>Titulo: </strong>
           {pelicula.title}
         </p>
-        <p>
-          <strong>Descripcion:</strong>
+        <p className='py-4'>
+          <strong>Descripcion: </strong>
           {pelicula.overview}
         </p>
         <p>
-          <strong>Generos:</strong>
+          <strong>Generos: </strong>
           {pelicula.genres.map((genre) => genre.name).join(', ')}
         </p>
       </div>

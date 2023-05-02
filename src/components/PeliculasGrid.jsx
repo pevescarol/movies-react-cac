@@ -13,7 +13,7 @@ const PeliculasGrid = () => {
   }, [])
 
   return(
-    <ul className='grid grid-cols-1 md:grid-cols-4'>
+    <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-8'>
       {peliculas.map((pelicula) => (
         <PeliculasCard key={pelicula.id} pelicula={pelicula}/>
       ))}

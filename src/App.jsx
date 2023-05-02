@@ -5,7 +5,7 @@ import DetallePelicula from './pages/DetallePelicula';
 function App() {
   return (
     <BrowserRouter>
-      <header>
+      <header className='bg-slate-900 h-[100px] items-center justify-center flex text-white'>
         <Link to='/'>
           <h1 className='text-center uppercase text-3xl'>Peliculas</h1>
         </Link>

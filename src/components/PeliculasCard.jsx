@@ -7,8 +7,8 @@ const PeliculasCard = ({ pelicula }) => {
   return (
     <Link to={`/pelicula/${pelicula.id}`}>
       <li className='movieCard'>
-        <img className="movieImage" src={imgURL} alt={pelicula.title} />
-        <div>{pelicula.title}</div>
+        <img className='w-[230px] m-auto' src={imgURL} alt={pelicula.title} />
+        <div className='text-center mt-4'>{pelicula.title}</div>
       </li>
     </Link>
 )
