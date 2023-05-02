@@ -30,7 +30,7 @@ const DetallePelicula = () => {
       <div className='-mt-[150px] mx-32 flex items-center relative z-10 mobile:block'>
         <img className='w-[200px] min-w-[200px] h-[300px] mobile:mx-auto' src={imgURL} alt={pelicula.title} />
         <div className='px-3 flex flex-col items-start gap-3 mobile:items-center'>
-          <p className=' text-xl line-clamp-1'>{pelicula.title}</p>
+          <p className=' text-xl'>{pelicula.title}</p>
           <ul className='flex items-center gap-3 mobile:flex-wrap'>
               {pelicula.genres.map((genre) =>(
                 <li className='px-3 py-1.5 bg-primary rounded-lg text-sm'>{genre.name}</li>

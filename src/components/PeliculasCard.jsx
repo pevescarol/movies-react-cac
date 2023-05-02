@@ -6,9 +6,9 @@ const PeliculasCard = ({ pelicula }) => {
 
   return (
     <Link to={`/pelicula/${pelicula.id}`}>
-      <li className='flex flex-col mb-8  p-1.5 hover:bg-primary cursor-pointer'>
-        <img className='h-[300px] flex-1 m-auto overflow-hidden' src={imgURL} alt={pelicula.title} />
-        <div className='mx-4 mt-4 py-1.5 line-clamp-2 text-center'>{pelicula.title}</div>
+      <li className='flex flex-col mb-8  p-1.5 hover:bg-primary rounded-xl cursor-pointer'>
+        <img className='h-[200px] flex-1 m-auto overflow-hidden' src={imgURL} alt={pelicula.title} />
+        <div className='mx-4 mt-4 py-1.5 text-center text-lg'>{pelicula.title}</div>
       </li>
     </Link>
 )

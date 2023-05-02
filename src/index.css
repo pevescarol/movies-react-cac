@@ -4,7 +4,7 @@
 
 @layer base {
   img {
-    @apply rounded-lg
+    @apply rounded-xl
   }
 
   li {
