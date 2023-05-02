@@ -1,4 +1,3 @@
-import '../styles/PeliculasCard.css'
 import { Link } from 'react-router-dom'
 
 const PeliculasCard = ({ pelicula }) => {

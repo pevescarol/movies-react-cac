@@ -1,6 +1,5 @@
 import { get } from '../utils/httpCliente'
 import PeliculasCard from './PeliculasCard'
-import '../styles/PeliculasGrid.css'
 import { useState, useEffect } from 'react'
 
 const PeliculasGrid = () => {
@@ -14,7 +13,7 @@ const PeliculasGrid = () => {
   }, [])
 
   return(
-    <ul className='moviesGrid'>
+    <ul className='grid grid-cols-1 md:grid-cols-4'>
       {peliculas.map((pelicula) => (
         <PeliculasCard key={pelicula.id} pelicula={pelicula}/>
       ))}

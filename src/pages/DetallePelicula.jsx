@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { get } from '../utils/httpCliente'
 import { useParams } from 'react-router-dom'
-import '../styles/DetallePelicula.css'
 
 const DetallePelicula = () => {
 
