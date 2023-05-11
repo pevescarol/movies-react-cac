@@ -1,7 +1,12 @@
-import PeliculasGrid from "../components/PeliculasGrid";
+import PeliculasGrid from "../components/PeliculasGrid"
+
 
 const LandingPage = () => {
-    return <PeliculasGrid />
+  return (
+    <main>
+      <PeliculasGrid />
+    </main>
+  )
 }
 
 export default LandingPage
