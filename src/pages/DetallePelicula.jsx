@@ -21,7 +21,7 @@ const DetallePelicula = () => {
   const imgURL = `https://image.tmdb.org/t/p/w300${pelicula.poster_path}`
 
   return(
-    <div >
+    < >
       <div className='h-[300px] left-0 right-0 top-0 relative'> 
         <div className='overlay-film-cover'></div> 
         <img className='object-cover object-top  w-full h-full' src={`https://image.tmdb.org/t/p/w1280${pelicula.backdrop_path}`} alt={pelicula.title} />
@@ -39,7 +39,7 @@ const DetallePelicula = () => {
           <p className='opacity-[0.9] mobile:text-center'>{pelicula.overview}</p>
         </div>
       </div>
-    </div>
+    </>
   )
 
 }

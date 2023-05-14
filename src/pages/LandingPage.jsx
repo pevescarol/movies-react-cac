@@ -3,7 +3,7 @@ import PeliculasGrid from "../components/PeliculasGrid"
 
 const LandingPage = () => {
   return (
-    <main>
+    <main className="max-w-[1200px] mx-auto px-5">
       <PeliculasGrid />
     </main>
   )
