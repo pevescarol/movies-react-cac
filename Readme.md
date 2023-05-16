@@ -2,6 +2,7 @@
 
 Esta es una aplicación en React.js que muestra información sobre películas utilizando la API de TMDB (The Movie Database). Permite a los usuarios buscar películas por título, ver detalles de películas individuales.
 
+
 ## Requisitos previos
 
 Antes de ejecutar la aplicación, asegúrate de tener instalado lo siguiente:
@@ -9,15 +10,16 @@ Antes de ejecutar la aplicación, asegúrate de tener instalado lo siguiente:
 - Node.js: [Descargar Node.js](https://nodejs.org)
 - npm: npm se instala automáticamente junto con Node.js
 
+
 ## Configuración
 
 Sigue estos pasos para configurar el proyecto en tu máquina local:
 
 1. Clona el repositorio:
 
-   ```shell
+  ```shell
    git clone https://github.com/pevescarol/movies-react-cac.git
-   ```
+  ```
 
 2. Navega hasta el directorio del proyecto:
 
@@ -29,6 +31,7 @@ Sigue estos pasos para configurar el proyecto en tu máquina local:
   ```shell
    npm install
   ```
+
 
 ## Uso
 
@@ -50,6 +53,7 @@ O puedes utilizar las credenciales que ya vienen con el repositorio.
 3. Abre tu navegador web y ve a **http://localhost:3000**.
 La aplicación se cargará y podrás comenzar a explorar y buscar películas.
 
+
 ## Funcionalidades *al momento*
 
 La aplicación de películas en React.js ofrece las siguientes funcionalidades principales:
@@ -59,6 +63,7 @@ La aplicación de películas en React.js ofrece las siguientes funcionalidades p
 - Detalles de películas: Al hacer clic en una película en la lista de resultados de búsqueda, se muestra una página con detalles adicionales de la película, como el título, la sinopsis,los géneros y el póster.
 
 
+
 ### Créditos
 
-Este proyecto fue creado como parte de la práctica para el curso de React por parte del [programa Codo a Codo](https://agenciadeaprendizaje.bue.edu.ar/).
+Este proyecto fue creado como parte práctica del curso de React por parte del [programa Codo a Codo](https://agenciadeaprendizaje.bue.edu.ar/).
