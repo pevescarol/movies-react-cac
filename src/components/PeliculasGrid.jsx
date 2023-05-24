@@ -3,21 +3,25 @@ import { useState, useEffect } from 'react';
 
 import PeliculasCard from './PeliculasCard';
 import Paginacion from '../components/Paginacion';
+import Spinner from '../components/Spinner'
 
 
 const PeliculasGrid = () => {
   const [peliculas, setPeliculas] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchKey, setSearchKey] = useState('')
+  const [cargando, setCargando] = useState(true)
 
   useEffect(() => {
     fetchData(currentPage);
   }, [currentPage]);
 
   const fetchData = (page) => {
+    setCargando(true)
     get(`/discover/movie?language=es&page=${page}`)
       .then((data) => {
         setPeliculas(data.results);
+        setCargando(false)
       })
       .catch((error) => {
         console.log('Error al obtener los datos: ', error);
@@ -39,11 +43,15 @@ const PeliculasGrid = () => {
     fetchSearchMovies(searchKey)
   }
 
+  if(cargando) {
+    return <Spinner />
+  }
+
   return (
     <>
       <section className='w-full relative mt-28'>
         <div className='mx-auto py-4 px-4 sm:px-6 lg:px-8 max-w-2x1 text-center'>
-          <form onSubmit={searchMovie} className='flex flex-col sm:flex-row justify-center gap-4 items-center font-medium' >
+          <form onSubmit={searchMovie} className='flex flex-col sm:flex-row justify-center gap-2 items-center font-medium' >
             <input 
               type="text" 
               onChange={e => setSearchKey(e.target.value)} 
