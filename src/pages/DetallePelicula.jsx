@@ -13,7 +13,7 @@ const DetallePelicula = () => {
   
   useEffect(() => {
     setCargando(true)
-    get(`/movie/${peliculaId}`).then((data) => {
+    get(`/movie/${peliculaId}?language=es`).then((data) => {
       setPelicula(data)
       setCargando(false)
     })
