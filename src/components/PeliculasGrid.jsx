@@ -1,5 +1,6 @@
 import { get } from '../utils/httpCliente';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom'
 
 import PeliculasCard from './PeliculasCard';
 import Paginacion from '../components/Paginacion';
@@ -7,18 +8,37 @@ import Spinner from '../components/Spinner'
 
 
 const PeliculasGrid = () => {
-  const [peliculas, setPeliculas] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [searchKey, setSearchKey] = useState('')
+
+  // como trabaja useLocation
+  // const location = useLocation()
+  // console.log(location);
+  // console.log(location.search);
+
+  // utilizo este hook para tomar lo que viene por params
+  const useQuery = () => {
+    return new URLSearchParams(useLocation().search)
+  }
+  // guardo en una variable lo que se busc en el input
+  const query = useQuery()
+  const search = query.get('search')
+
+  const [peliculas, setPeliculas] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
   const [cargando, setCargando] = useState(true)
 
+  
   useEffect(() => {
     fetchData(currentPage);
-  }, [currentPage]);
+  }, [currentPage, search]); /* seagrega search para que el efecto se ejecute con los cambios */
 
   const fetchData = (page) => {
+
+    // si hay una busqueda visita un endpoint, sino otro
+    const searchURL = search ? '/search/movie?query=' + search  : `/discover/movie?language=es&page=${page}`
+    
     setCargando(true)
-    get(`/discover/movie?language=es&page=${page}`)
+    
+    get(searchURL)
       .then((data) => {
         setPeliculas(data.results);
         setCargando(false)
@@ -28,44 +48,12 @@ const PeliculasGrid = () => {
       });
   };
 
-  const fetchSearchMovies = (searchKey) => {
-    get(`/search/movie?query=${searchKey}`)
-      .then((data) => {
-        setPeliculas(data.results);
-      })
-      .catch((error) => {
-        console.log('Error al obtener los datos: ', error);
-      });
-  };
-
-  const searchMovie = (e) => {
-    e.preventDefault()
-    fetchSearchMovies(searchKey)
-  }
-
   if(cargando) {
     return <Spinner />
   }
 
   return (
     <>
-      <section className='w-full relative mt-28'>
-        <div className='mx-auto py-4 px-4 sm:px-6 lg:px-8 max-w-2x1 text-center'>
-          <form onSubmit={searchMovie} className='flex flex-col sm:flex-row justify-center gap-2 items-center font-medium' >
-            <input 
-              type="text" 
-              onChange={e => setSearchKey(e.target.value)} 
-              className='sm:mb-0 px-5 py-3 bg-indigo-100 text-indigo-700 mobile:text-center transform hover:bg-white active:top-0.5 placeholder:text-indigo-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 focus-visible outline-none max-w-[500px] md:w-[500px] p-2 rounded-xl border-none shadow-md shadow-zinc-800/5'
-              placeholder='¿Qué peli estas buscando?'/>
-            <button 
-                className='px-5 py-3 bg-indigo-500 shadow rounded-xl text-indigo-100 hover:bg-indigo-600 hover:text-white active:top-0.5'
-                type='submit'>
-                  Buscar
-            </button>
-          </form>
-        </div>
-      </section>
-
       <section className=' mx-auto py-8 px-4 w-full max-w-7x1 '>
         <ul className="grid grid-cols-[300px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-content-center">
             {peliculas.map((pelicula) => (

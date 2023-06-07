@@ -13,7 +13,7 @@ const DetallePelicula = () => {
   
   useEffect(() => {
     setCargando(true)
-    get(`/movie/${peliculaId}`).then((data) => {
+    get(`/movie/${peliculaId}?language=es`).then((data) => {
       setPelicula(data)
       setCargando(false)
     })
@@ -34,7 +34,7 @@ const DetallePelicula = () => {
     < >
       <div className='h-[300px] left-0 right-0 top-0 relative'> 
         <div className='overlay-film-cover'></div> 
-        <img className='object-cover object-top mt-[100px] rounded-none  w-full h-full' src={`https://image.tmdb.org/t/p/w1280${pelicula.backdrop_path}`} alt={pelicula.title} />
+        <img className='object-cover object-top mt-[80px] rounded-none  w-full h-full' src={`https://image.tmdb.org/t/p/w1280${pelicula.backdrop_path}`} alt={pelicula.title} />
       </div>
 
       <div className='-mt-[150px] md:mx-32 flex items-center justify-center relative z-10 mobile:block mobile:pb-10'>

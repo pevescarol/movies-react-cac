@@ -6,7 +6,7 @@ import DetallePelicula from './pages/DetallePelicula'
 function App() {
   return (
     <BrowserRouter>
-      <header className='bg-white h-24 pt-3 flex items-center justify-center fixed top-0 w-full z-10'>
+      <header className='bg-white h-20 pt-3 flex items-center justify-center fixed top-0 w-full z-10'>
         <Link to='/' className='group relative tracking-wide antialiased flex justify-center'>
           <span className=' inline-block text-3xl font-semibold'>🍿</span>
           {/* <span className=' inline-block text-3xl font-semibold  opacity-0 transition-all duration-300 transform translaye-x-5 group-hover:opacity-100 group-hover:translate-x-0 '>🍿</span> */}
